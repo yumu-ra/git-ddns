@@ -10,7 +10,7 @@
 - **编程语言环境**：Python 3.8 及以上版本
 - **依赖库**：
   ```bash
-  pip install github # 用于 GitHub API 操作
+  pip install Pygithub # 用于 GitHub API 操作
   pip install apscheduler # 用于定时任务
   ```
 ### 2. 配置文件
@@ -44,7 +44,7 @@ nohup python main.py > /dev/null 2>&1 &
 
 ## 四、核心原理
 1. **IP 地址更新**：程序定期检测当前设备的公网 IP，若发生变化，则将新 IP 写入指定的 GitHub 仓库文件（如 `ddns.json`），并提交更新。
-2. **地址获取**：用户通过访问 GitHub 仓库内的文件（例如 `https://github.com/your_username/your_repo_name/ddns.json`），读取其中的 IP 地址，即可访问对应服务器。
+2. **地址获取**：用户通过访问 GitHub 仓库内的文件（例如 `https://github.com/your_username/your_repo_name/date/ddns.json`），读取其中的 IP 地址，即可访问对应服务器。
 
 
 ## 五、项目结构说明
@@ -56,8 +56,8 @@ nohup python main.py > /dev/null 2>&1 &
     ├── Scripts          # 脚本目录
     │   └── get_ipv6.sh      # 获取 IP 地址的脚本  
     ├── config           # 配置文件目录
-    │   ├── ___init__.py   # 初始化文件
-    │   └── config.json # 配置文件
+    │   └── ___init__.py   # 初始化文件
+    ├──config.json # 配置文件
     └── README.md        # 项目说明文档
 ```
 
@@ -65,7 +65,7 @@ nohup python main.py > /dev/null 2>&1 &
 ## 六、贡献与反馈
 1. 欢迎通过 [GitHub Issues](你的项目 Issues 链接) 提交 BUG 反馈或功能建议。
 2. 若想参与开发，可提交 Pull Request，提交前请确保代码通过 PEP8 规范检查，并添加必要注释。
-3.特别感谢豆包ai对我这个初学者的帮助，让我能把这个项目完成；
+3.特别感谢豆包ai对我这个初学者的帮助，让我能把这个项目完成。
 4.灵感与参考：url： https://github.com/jeessy2/ddns-go 正是这个项目与github木马给我的启发，让我能把这个项目完成，并且通过命令获取IP的命令也是jessy2的，感谢开源世界的力量。
 
 ## 七、许可证
