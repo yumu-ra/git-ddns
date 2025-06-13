@@ -1,0 +1,5 @@
+{
+    "repo": "your_username/your_repo_name",
+    "token": "1145141919810", 
+    "update_interval" : 60 
+}
