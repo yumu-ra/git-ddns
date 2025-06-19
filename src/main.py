@@ -45,8 +45,24 @@ class GithubCilent:
         """
         更新仓库中的文件内容，将新的 IP 地址信息写入文件。
         """
+        datas = f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面跳转中...</title>
+    <script>
+        window.location.href = "{data}";
+    </script>
+</head>
+<body>
+    <p>正在跳转到<a href="{data}">https://www.example.com</a>...</p>
+</body>
+</html>
+
+"""
         try:
-            self.repo.update_file(self.file.path, message="Update my ip",content=data,sha=self.file.sha)
+            self.repo.update_file(self.file.path, message="Update my ip",content=datas,sha=self.file.sha)
         except github.GithubException as e:
             print(f"更新失败: {e}")
 
